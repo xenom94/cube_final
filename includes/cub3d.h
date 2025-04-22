@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 08:35:26 by sisser            #+#    #+#             */
-/*   Updated: 2025/04/22 20:30:26 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:51:54 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,5 +234,6 @@ t_image	init_texture(t_data *data, int flag);
 void	my_mlx_pixel_put(t_mlx *mlx_data, int pixel_x, int pixel_y, int pixel_color);
 float	angles_normalizer(float angle);
 int	choose_texture(t_ray *ray, float ra);
+//void	calcule_wall_coordinates(t_data *game_data, int ray_index);
 
 #endif
