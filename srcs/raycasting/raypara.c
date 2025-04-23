@@ -69,3 +69,65 @@ void	distance_to_wall(t_ray *ray, t_data *data)
 		ray->distance = horz_distance;
 	}
 }
+
+void	check_horizontal_intersections(t_ray *ray, t_data *data)
+{
+	while (ray->horizontal_intercept_x >= 0 && ray->horizontal_intercept_x <= WIN_WIDTH * \
+		TILE_SIZE && ray->horizontal_intercept_y >= 0 && \
+		ray->horizontal_intercept_y <= WIN_HEIGHT * TILE_SIZE)
+	{
+		if (check_wall_collision(data, ray->horizontal_intercept_x, ray->horizontal_intercept_y))
+			break ;
+		else
+		{
+			ray->horizontal_intercept_x += ray->horizontal_step_x;
+			ray->horizontal_intercept_y += ray->horizontal_step_y;
+		}
+	}
+}
+
+void	calculate_vertical_intersection(t_ray *ray, t_data *data)
+{
+	double	arc_tan;
+
+	arc_tan = -tan(ray->ray_angle);
+	if (ray->ray_angle > PI / 2 && ray->ray_angle < 3 * PI / 2)
+	{
+		ray->x_intercept_v = (int)(data->player.x / TILE_SIZE) * \
+		TILE_SIZE - 0.001;
+		ray->y_intercept_v = (data->player.x - ray->x_intercept_v) * \
+		arc_tan + data->player.y;
+		ray->x_step_v = -TILE_SIZE;
+	}
+	else if (ray->ray_angle < PI / 2 || ray->ray_angle > 3 * PI / 2)
+	{
+		ray->x_intercept_v = (int)(data->player.x / TILE_SIZE) * \
+		TILE_SIZE + TILE_SIZE;
+		ray->y_intercept_v = (data->player.x - ray->x_intercept_v) * \
+		arc_tan + data->player.y;
+		ray->x_step_v = TILE_SIZE;
+	}
+	else if (ray->ray_angle == PI / 2 || ray->ray_angle == 3 * PI / 2)
+	{
+		ray->x_intercept_v = data->player.x;
+		ray->y_intercept_v = data->player.y;
+	}
+	ray->y_step_v = -ray->x_step_v * arc_tan;
+}
+
+void	check_vertical_intersections(t_ray *ray, t_data *data)
+{
+	while (ray->x_intercept_v >= 0 && ray->x_intercept_v <= WIN_WIDTH * \
+		TILE_SIZE && ray->y_intercept_v >= 0 && \
+		ray->y_intercept_v <= WIN_HEIGHT * TILE_SIZE)
+	{
+		if (check_wall_collision(data, ray->x_intercept_v, ray->y_intercept_v))
+			break ;
+		else
+		{
+			ray->x_intercept_v += ray->x_step_v;
+			ray->y_intercept_v += ray->y_step_v;
+		}
+	}
+	ray->player_hit_vertical_wall = 0;
+}

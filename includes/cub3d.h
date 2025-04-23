@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 08:35:26 by sisser            #+#    #+#             */
-/*   Updated: 2025/04/22 21:51:54 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/23 12:19:25 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,18 @@
 # define WIN_WIDTH 1080
 # define WIN_HEIGHT 720
 # define TILE_SIZE 64
-# define A_KEY 0
-# define D_KEY 2
-# define W_KEY 13
-# define S_KEY 1
-# define KEYDOWN 125
-# define KEYUP 126
-# define RIGHT_ARROW 124
-# define LEFT_ARROW 123
-# define ESC 53
+# define A_KEY 97
+# define D_KEY 100
+# define W_KEY 119
+# define S_KEY 115
+# define RIGHT_ARROW 65363
+# define LEFT_ARROW 65361
+# define ESC 65307
 # define FOV 1.0471975512
 # define WALL_STRIP_WIDTH 1
 # define NUM_RAYS WIN_WIDTH
 # define PI 3.14159
-//# define M_PI_2 3.14159 * 2
+# define PI_2 3.14159 * 2
 
 typedef struct s_wall_cordinate
 {
@@ -235,5 +233,11 @@ void	my_mlx_pixel_put(t_mlx *mlx_data, int pixel_x, int pixel_y, int pixel_color
 float	angles_normalizer(float angle);
 int	choose_texture(t_ray *ray, float ra);
 //void	calcule_wall_coordinates(t_data *game_data, int ray_index);
+void	distance_to_wall(t_ray *ray, t_data *data);
+void	check_vertical_intersections(t_ray *ray, t_data *data);
+void	calculate_vertical_intersection(t_ray *ray, t_data *data);
+void	check_horizontal_intersections(t_ray *ray, t_data *data);
+void	rays_parameters(t_data *data);
+
 
 #endif

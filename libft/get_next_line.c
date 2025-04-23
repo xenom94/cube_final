@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 20:50:33 by iabboudi          #+#    #+#             */
-/*   Updated: 2025/04/22 20:11:57 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:41:44 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static char	*read_until_newline(char *str, int fd)
 		free (buffer);
 		return (NULL);
 	}
-	while (ft_strchr(str, '\n') == NULL && bytes_read != 0)
+	while (ft_strchr1(str, '\n') == NULL && bytes_read != 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)

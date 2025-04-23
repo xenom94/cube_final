@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:51:22 by iabboudi          #+#    #+#             */
-/*   Updated: 2025/04/22 19:51:59 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:47:52 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int	ft_isspace(char *str)
 {
-	if (*str == ' ')
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] == ' ')
+		i++;
+	if (str[i] == '\0')
 		return (1);
 	return (0);
 }
