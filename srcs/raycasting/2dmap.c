@@ -29,8 +29,8 @@ void	update_player_position(t_data *game_data)
 	side_step = game_data->player.strafe_direction * game_data->player.move_speed;
 	next_x = game_data->player.x + cos(game_data->player.angle) * move_step;
 	next_y = game_data->player.y + sin(game_data->player.angle) * move_step;
-	next_x += cos(game_data->player.angle + M_PI_2) * side_step;
-	next_y += sin(game_data->player.angle + M_PI_2) * side_step;
+	next_x += cos(game_data->player.angle + PI_2) * side_step;
+	next_y += sin(game_data->player.angle + PI_2) * side_step;
 	if (!check_wall_collision(game_data, next_x, next_y)
 		&& !check_wall_collision(game_data, next_x + 2, next_y + 2)
 		&& !check_wall_collision(game_data, next_x - 2, next_y - 2)

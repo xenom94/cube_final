@@ -1,6 +1,6 @@
 NAME		=	cub3d
 CC		=	cc
-CFLAGS		=	-Imlx_linux -fsanitize=address #-Werror -Wextra -Wall
+CFLAGS		=	-Imlx_linux -Werror -Wextra -Wall
 RM		=	rm -rf
 SRCS		=	main.c srcs/parsing/check_map.c srcs/parsing/exit.c srcs/parsing/get_data.c \
 			srcs/parsing/get_map.c srcs/parsing/init_game.c srcs/parsing/init_texture.c \

@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 08:35:26 by sisser            #+#    #+#             */
-/*   Updated: 2025/04/23 12:32:37 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:50:55 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define WALL_STRIP_WIDTH 1
 # define NUM_RAYS WIN_WIDTH
 # define PI 3.14159
-# define PI_2 3.14159 * 2
+# define PI_2 3.14159 / 2
 
 typedef struct s_wall_cordinate
 {
