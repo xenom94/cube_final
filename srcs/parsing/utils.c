@@ -21,12 +21,6 @@ int	is_only_digits(char *str)
 void	check_plus(t_data *data)
 {
 
-	printf("==>%d\n", data->ea_counter);
-	printf("==>%d\n", data->we_counter);
-	printf("==>%d\n", data->so_counter);
-	printf("==>%d\n", data->no_counter);
-	printf("==>%d\n", data->c_counter);
-	printf("==>%d\n", data->f_counter);
 	if (data->c_counter != 1 || data->f_counter != 1 || data->ea_counter != 1
 		|| data->so_counter != 1 || data->no_counter != 1 || data->we_counter != 1)
 		ft_exit(data, "Something missing", 1);

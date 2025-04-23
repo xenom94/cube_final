@@ -6,7 +6,7 @@
 /*   By: iabboudi <iabboudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 08:35:26 by sisser            #+#    #+#             */
-/*   Updated: 2025/04/23 12:19:25 by iabboudi         ###   ########.fr       */
+/*   Updated: 2025/04/23 12:32:37 by iabboudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CUB3D_H
 
 #include "../libft/libft.h"
-#include "../printf/ft_printf.h"
 
 #include <unistd.h>
 #include <stdio.h>
